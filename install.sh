@@ -3397,7 +3397,7 @@ showAccounts() {
 			local email=
 			#email=$(echo "${defaultUser}" | jq -r .email)
 			email=$(echo "${defaultUser}" | jq -r .add)
-			email+= "_Hysteria"
+			email= "${email}_Hysteria"
 
 			if [[ -n ${defaultUser} ]]; then
 				echoContent skyBlue "\n ---> 账号:${email}"
