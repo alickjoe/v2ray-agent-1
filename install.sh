@@ -3396,7 +3396,7 @@ showAccounts() {
 			defaultUser=$(jq '.inbounds[0].settings.clients[]|select('${uuidType}'=="'"${user}"'")' ${configPath}${frontingType}.json)
 			local email=
 			#email=$(echo "${defaultUser}" | jq -r .email)
-			email=$(jq -r .add)
+			email=$(echo "${defaultUser}" | jq -r .add)
 
 			if [[ -n ${defaultUser} ]]; then
 				echoContent skyBlue "\n ---> 账号:${email}"
